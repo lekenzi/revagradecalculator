@@ -1,0 +1,165 @@
+@media (max-width:750px) {
+
+    body{
+        font-family: 'Montserrat', sans-serif;
+        margin: auto !important;
+    }
+
+    h1{
+        font-family: 'Montserrat', sans-serif !important;
+
+        margin-left: auto !important;
+        padding: 7px;
+        font-size: medium;
+    }
+
+
+
+    h3{
+        font-family: 'Montserrat', sans-serif !important;
+        margin-right: auto !important;
+        font-size: 14px !important;
+      }
+      
+      h5{
+        font-size: 13px;
+        font-family: 'Montserrat', sans-serif !important;
+        margin-right: auto !important;
+      }
+
+
+    #gradwarning {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 22px;
+    }
+
+    h3{
+        margin-left: auto !important;
+        padding: 3px;
+    }
+
+    nav{
+        text-align: center;
+    }
+
+    #revaimage{
+        height: 80px;
+        width: auto;
+    }
+    
+    #numberfetchsection{
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+    }
+
+    #iaheader{
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 10px !important;
+        margin-bottom: 20px;
+        font-size: 50px;
+        margin-left: 10px !important;
+        margin: auto;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .input{
+        font-family: 'Montserrat', sans-serif;
+        width: auto;
+    }
+    #numberinput{
+        margin: auto;
+        font-family: 'Montserrat', sans-serif;
+        width: auto;
+        text-align: center;
+        font-size: large;
+    }
+    .buttonsection{
+        text-align: center;
+    }
+
+    #maindiv{
+        text-align: center;
+        margin: auto;
+        margin-top: 5px;
+        
+    }
+    #inputerr{
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        margin-left: auto;
+        margin-top: 0px;
+    }
+
+    #inputlabel{
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        margin: auto;
+    }
+    div{
+        margin-left: 0px;
+    }
+
+    #inputlabel{
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 10px;
+        text-align: center;
+        /* margin-left: 10px; */
+    }
+
+    .inputs{
+        font-family: 'Montserrat', sans-serif;
+        margin-left: auto !important;
+    }
+
+    #gotosemester{
+        font-family: 'Montserrat', sans-serif;
+        margin-left: auto !important;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #internalassignmenttotaltable{
+        font-family: 'Montserrat', sans-serif;
+        margin:3px !important ;
+    }
+
+    #totalmarks{
+        font-family: 'Montserrat', sans-serif;
+        padding-top: 10px;
+    }
+
+    .sub-table{
+        font-family: 'Montserrat', sans-serif;
+        margin: auto !important;
+        margin: 0px 3px !important;
+    }
+
+    #totalsemmarks{
+        font-family: 'Montserrat', sans-serif;
+        padding-top: 20px;
+    }
+
+    #totalsgp{
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 10px;
+    }
+
+    .col{
+        font-family: 'Montserrat', sans-serif;
+        width: 60px;
+        font-size: 13.5px;
+        text-align: center;
+        padding: 0px 7px;
+    }
+
+    .communityelements{
+        text-align: center;
+    }
+
+    .communityimg{
+        margin: 10px !important;
+    }
+}
