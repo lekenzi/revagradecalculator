@@ -9,7 +9,7 @@
         font-family: 'Montserrat', sans-serif !important;
 
         margin-left: auto !important;
-        padding: 7px;
+        margin: 7px;
         font-size: medium;
     }
 
@@ -161,5 +161,14 @@
 
     .communityimg{
         margin: 10px !important;
+    }
+
+    #sembtn{
+        margin-left: auto !important;
+    }
+
+    #iaheader{
+        font-size: 50px;
+        margin-right: 10px;
     }
 }
