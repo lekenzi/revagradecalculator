@@ -68,9 +68,10 @@
         width: auto;
     }
     #numberinput{
-        margin: auto;
+        margin: auto !important;
         font-family: 'Montserrat', sans-serif;
         width: auto;
+        padding: 10px;
         text-align: center;
         font-size: large;
     }
@@ -155,12 +156,14 @@
         padding: 0px 7px;
     }
 
-    .communityelements{
+    .communityelement{
         text-align: center;
+        padding-bottom: 30px !important;
+        
     }
 
     .communityimg{
-        margin: 10px !important;
+        margin: 20px !important;
     }
 
     #sembtn{
@@ -168,7 +171,7 @@
     }
 
     #iaheader{
-        font-size: 50px;
+        font-size: 45px;
         margin-right: 10px;
     }
 }
