@@ -231,40 +231,21 @@ footer {
   color: #ffffff;
 }
 
-
-#contact{
+/* #contact {
   display: flex;
   margin: auto;
   text-align: center;
   padding-bottom: 30px;
-}
+} */
 
-
-.footerelements{
-  font-size: xx-large;
-  margin: auto !important;
-  padding-top: 10px;
-}
-
-.buttonsection{
+.buttonsection {
   text-align: center;
 }
 
-#ianbtn{
+#ianbtn {
   margin-right: 10px;
 }
 
-h3{
-  font-size: larger !important;
-}
-
-
-#sembtn{
+#sembtn {
   margin-left: 10px;
-}
-
-
-
-#contact div{
-  margin: auto;
 }
