@@ -21,6 +21,12 @@ footer {
 }
 
 /* Classes */
+.socialsour {
+  text-decoration: none;
+  color: #392f5a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .inputs {
   height: 500%;
   width: 90%;
@@ -229,23 +235,4 @@ footer {
   margin-top: 1em;
   font-size: 2.5em;
   color: #ffffff;
-}
-
-/* #contact {
-  display: flex;
-  margin: auto;
-  text-align: center;
-  padding-bottom: 30px;
-} */
-
-.buttonsection {
-  text-align: center;
-}
-
-#ianbtn {
-  margin-right: 10px;
-}
-
-#sembtn {
-  margin-left: 10px;
 }
