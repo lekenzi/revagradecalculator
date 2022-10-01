@@ -1,0 +1,118 @@
+@media (max-width: 690px) and (min-width: 280px) {
+  /* Elements */
+  html {
+    height: 100%;
+  }
+
+  body {
+    background-color: #fb8500;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  footer {
+    width: 100%;
+    background-color: #219ebc;
+    text-align: center;
+    margin-top: auto;
+    color: #8ecae6;
+  }
+
+  /* Classes */
+  .topbar {
+    background-color: #ffffff;
+    text-align: center;
+  }
+
+  .calfont {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .header {
+    display: inline;
+    color: #ffffff;
+  }
+
+  .maininput {
+    margin-top: 1.5em;
+    padding-left: 2em;
+    padding-right: 1em;
+  }
+
+  .buttonsection {
+    margin-top: 0.5em;
+    text-align: center;
+  }
+
+  .btn {
+    color: #ffb703;
+    background-color: #023047;
+    border-style: none;
+    padding: 0.3em 5em;
+    border-radius: 0.5em;
+    font-size: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.8em;
+  }
+
+  .footerelement {
+    margin: 1em;
+  }
+
+  .names {
+    display: inline;
+  }
+
+  .names h5,
+  h6 {
+    display: inline;
+    margin-right: 0.6em;
+  }
+
+  .names h5,
+  h6 {
+    font-size: 0.6em;
+  }
+
+  /* Ids */
+  #revatopbar {
+    width: 50%;
+    display: inline;
+    margin: 1em;
+  }
+
+  #mainheader {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1em;
+    text-align: center;
+  }
+
+  #mainlabel {
+    color: #023047;
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+
+  #batchselect {
+    margin-top: 0.5em;
+    width: 100%;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 0.5em;
+    padding: 1em;
+    border-style: solid;
+    border-width: 0.1em;
+    border-color: #023047;
+  }
+
+  #mainnames {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  #github {
+    width: 2em;
+  }
+}
