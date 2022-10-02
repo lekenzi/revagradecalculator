@@ -19,6 +19,11 @@
     color: #8ecae6;
   }
 
+  a {
+    text-decoration: none;
+    color: #8ecae6;
+  }
+
   /* Classes */
   .topbar {
     background-color: #ffffff;
@@ -46,8 +51,19 @@
   }
 
   .btn {
-    color: #ffb703;
-    background-color: #023047;
+    color: #f1faee;
+    background-color: #e63946;
+    border-style: none;
+    padding: 0.3em 5em;
+    border-radius: 0.5em;
+    font-size: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.8em;
+  }
+
+  .btn:hover {
+    color: #e63946;
+    background-color: #f1faee;
     border-style: none;
     padding: 0.3em 5em;
     border-radius: 0.5em;

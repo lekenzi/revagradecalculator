@@ -18,6 +18,11 @@ footer {
   color: #8ecae6;
 }
 
+a {
+  text-decoration: none;
+  color: #8ecae6;
+}
+
 /* Classes */
 .topbar {
   background-color: #ffffff;
@@ -45,14 +50,27 @@ footer {
 }
 
 .btn {
-  color: #ffb703;
-  background-color: #023047;
+  color: #f1faee;
+  background-color: #e63946;
   border-style: none;
   padding: 0.5em 3em;
   border-radius: 0.5em;
   font-size: 1.5em;
   margin-top: 1em;
   margin-bottom: 1em;
+  transition: color 0.2s, background-color 0.2s, margin-top 1s;
+}
+
+.btn:hover {
+  color: #e63946;
+  background-color: #f1faee;
+  border-style: none;
+  padding: 0.5em 3em;
+  border-radius: 0.5em;
+  font-size: 1.5em;
+  margin-top: 0.8em;
+  margin-bottom: 1em;
+  cursor: pointer;
 }
 
 .footerelement {
