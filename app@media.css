@@ -1,134 +1,177 @@
-@media (max-width: 690px) and (min-width: 280px) {
-  /* Elements */
-  html {
-    height: 100%;
-  }
+@media (max-width:750px) {
 
-  body {
-    background-color: #fb8500;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
+    body{
+        font-family: 'Montserrat', sans-serif;
+        margin: auto !important;
+    }
 
-  footer {
-    width: 100%;
-    background-color: #219ebc;
-    text-align: center;
-    margin-top: auto;
-    color: #8ecae6;
-  }
+    h1{
+        font-family: 'Montserrat', sans-serif !important;
 
-  a {
-    text-decoration: none;
-    color: #8ecae6;
-  }
+        margin-left: auto !important;
+        margin: 7px;
+        font-size: medium;
+    }
 
-  /* Classes */
-  .topbar {
-    background-color: #ffffff;
-    text-align: center;
-  }
 
-  .calfont {
-    font-family: Arial, Helvetica, sans-serif;
-  }
 
-  .header {
-    display: inline;
-    color: #ffffff;
-  }
+    h3{
+        font-family: 'Montserrat', sans-serif !important;
+        margin-right: auto !important;
+        font-size: 14px !important;
+      }
+      
+      h5{
+        font-size: 13px;
+        font-family: 'Montserrat', sans-serif !important;
+        margin-right: auto !important;
+      }
 
-  .maininput {
-    margin-top: 1.5em;
-    padding-left: 2em;
-    padding-right: 1em;
-  }
 
-  .buttonsection {
-    margin-top: 0.5em;
-    text-align: center;
-  }
+    #gradwarning {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 22px;
+    }
 
-  .btn {
-    color: #f1faee;
-    background-color: #e63946;
-    border-style: none;
-    padding: 0.3em 5em;
-    border-radius: 0.5em;
-    font-size: 1em;
-    margin-top: 0.5em;
-    margin-bottom: 0.8em;
-  }
+    h3{
+        margin-left: auto !important;
+        padding: 3px;
+    }
 
-  .btn:hover {
-    color: #e63946;
-    background-color: #f1faee;
-    border-style: none;
-    padding: 0.3em 5em;
-    border-radius: 0.5em;
-    font-size: 1em;
-    margin-top: 0.5em;
-    margin-bottom: 0.8em;
-  }
+    nav{
+        text-align: center;
+    }
 
-  .footerelement {
-    margin: 1em;
-  }
+    #revaimage{
+        height: 80px;
+        width: auto;
+    }
+    
+    #numberfetchsection{
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+    }
 
-  .names {
-    display: inline;
-  }
+    #iaheader{
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 10px !important;
+        margin-bottom: 20px;
+        font-size: 50px;
+        margin-left: 10px !important;
+        margin: auto;
+        margin-bottom: 10px;
+        text-align: left;
+    }
 
-  .names h5,
-  h6 {
-    display: inline;
-    margin-right: 0.6em;
-  }
+    .input{
+        font-family: 'Montserrat', sans-serif;
+        width: auto;
+    }
+    #numberinput{
+        margin: auto !important;
+        font-family: 'Montserrat', sans-serif;
+        width: auto;
+        padding: 10px;
+        text-align: center;
+        font-size: large;
+    }
+    .buttonsection{
+        text-align: center;
+    }
 
-  .names h5,
-  h6 {
-    font-size: 0.6em;
-  }
+    #maindiv{
+        text-align: center;
+        margin: auto;
+        margin-top: 5px;
+        
+    }
+    #inputerr{
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        margin-left: auto;
+        margin-top: 0px;
+    }
 
-  /* Ids */
-  #revatopbar {
-    width: 50%;
-    display: inline;
-    margin: 1em;
-  }
+    #inputlabel{
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        margin: auto;
+    }
+    div{
+        margin-left: 0px;
+    }
 
-  #mainheader {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-top: 1em;
-    text-align: center;
-  }
+    #inputlabel{
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 10px;
+        text-align: center;
+        /* margin-left: 10px; */
+    }
 
-  #mainlabel {
-    color: #023047;
-    font-size: 1.7rem;
-    font-weight: bold;
-  }
+    .inputs{
+        font-family: 'Montserrat', sans-serif;
+        margin-left: auto !important;
+    }
 
-  #batchselect {
-    margin-top: 0.5em;
-    width: 100%;
-    font-weight: bold;
-    font-size: 0.9rem;
-    border-radius: 0.5em;
-    padding: 1em;
-    border-style: solid;
-    border-width: 0.1em;
-    border-color: #023047;
-  }
+    #gotosemester{
+        font-family: 'Montserrat', sans-serif;
+        margin-left: auto !important;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 
-  #mainnames {
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
+    #internalassignmenttotaltable{
+        font-family: 'Montserrat', sans-serif;
+        margin:3px !important ;
+    }
 
-  #github {
-    width: 2em;
-  }
+    #totalmarks{
+        font-family: 'Montserrat', sans-serif;
+        padding-top: 10px;
+    }
+
+    .sub-table{
+        font-family: 'Montserrat', sans-serif;
+        margin: auto !important;
+        margin: 0px 3px !important;
+    }
+
+    #totalsemmarks{
+        font-family: 'Montserrat', sans-serif;
+        padding-top: 20px;
+    }
+
+    #totalsgp{
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 10px;
+    }
+
+    .col{
+        font-family: 'Montserrat', sans-serif;
+        width: 60px;
+        font-size: 13.5px;
+        text-align: center;
+        padding: 0px 7px;
+    }
+
+    .communityelement{
+        text-align: center;
+        padding-bottom: 30px !important;
+        
+    }
+
+    .communityimg{
+        margin: 20px !important;
+    }
+
+    #sembtn{
+        margin-left: auto !important;
+    }
+
+    #iaheader{
+        font-size: 45px;
+        margin-right: 10px;
+    }
 }

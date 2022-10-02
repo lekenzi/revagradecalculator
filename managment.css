@@ -1,0 +1,52 @@
+body {
+  background-color: #9dd9d2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+nav {
+  background-color: #ffffff;
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+  background-color: #9dd9d2;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footerelements {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #392f5a;
+  margin: 1em;
+}
+
+.namesandsocials {
+  display: inline;
+  margin-right: 2em;
+}
+
+.communityelement {
+  margin-bottom: 0.3em;
+}
+
+.communityimg {
+  margin-right: 2em;
+  margin-bottom: 0em;
+}
+
+#head {
+  text-align: center !important;
+  color: #392f5a !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: larger;
+  font-weight: bold;
+  padding-top: 2em;
+  font-size: 4em;
+}
+
+#revaimage {
+  width: 25%;
+}

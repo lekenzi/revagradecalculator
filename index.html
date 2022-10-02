@@ -4,68 +4,94 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
     <!-- CSS -->
-    <link href="reset.css" rel="stylesheet" />
-    <link href="app.css" rel="stylesheet" />
-    <!-- Mobile CSS -->
-    <link href="app@media.css" rel="stylesheet" />
-    <!-- Favicon -->
+    <!-- Bootstrap -->
     <link
-      rel="icon"
-      href="https://www.reva.edu.in/assets/demo/default/media/img/logo/favicon-32x32.png"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
     />
-    <title>Reva Grad Calculator</title>
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="reset.css" />
+    <!-- Desktop CSS -->
+    <link rel="stylesheet" href="app.css" />
+    <!-- Mobile CSS -->
+    <link rel="stylesheet" href="app@media.css" />
+    <!-- Favicon -->
+    <link rel="icon" href="ihttps://www.reva.edu.in/assets/demo/default/media/img/logo/favicon-32x32.png" />
+    <!-- Title -->
+    <title>Reva Grade Calculator</title>
   </head>
   <body>
     <!-- Top Bar -->
-    <nav class="topbar">
-      <img id="revatopbar" src="images/Reva.png" alt="Reva University" />
+    <nav>
+      <img id="revaimage" src="images/Reva.png" alt="Reva University" />
     </nav>
-    <!-- Header Text -->
-    <div id="mainheader" class="calfont">
-      <h1 class="header">Get Your Grades</h1>
-      <br />
-      <h2 class="header">(Fill your IA & SEE marks)</h2>
-    </div>
-    <!--Input-->
-    <div class="maininput">
-      <h3 class="calfont" id="mainlabel">Select Your Batch</h3>
-      <!-- Drop Box -->
-      <select id="batchselect" class="calfont">
-        <option>Please Select Your Batch</option>
-        <option>Batch 1</option>
-        <option>Batch 2</option>
-        <option>Batch 3</option>
-        <option>Batch 4</option>
-      </select>
-    </div>
-    <div class="buttonsection"><button class="btn calfont">Next</button></div>
-    <!-- Footer -->
-    <footer class="calfont">
-      <div class="footerelement">
-        <h4>Designed and Developed by</h4>
-        <div id="mainnames">
-          <div class="names">
-            <h5>Deon Levon Dmello C&IT</h5>
-            <h5>B Jamin Enock C&IT</h5>
-          </div>
-          <br />
-          <div class="names">
-            <a target="_blank" href="https://linktr.ee/deondmello16">
-              <h6>@deonlevondmello socials</h6></a
-            >
-            <a target="_blank" href="https://linktr.ee/jaminenock">
-              <h6>@jaminenock socials</h6></a
-            >
-          </div>
-        </div>
-
-        <div>
-          <a target="_blank" href="https://github.com/citrevagithub">
-            <img id="github" src="images/Github.svg" alt="C&IT Github" />
-          </a>
+    <div id="maindiv">
+      <div id="numberfetchsection">
+        <!-- Page Header -->
+        <h1 id="iaheader">Internals and Semester <br />Grade Calculator</h1>
+        <!-- Inputs -->
+        <label id="inputlabel" for="numberinput">Number of Subjects</label>
+        <input
+          id="numberinput"
+          class="inputs"
+          type="text"
+          maxlength="2"
+          minlength="1"
+        />
+        <h5 id="inputerr" class="inputerror">Error</h5>
+        <div class="buttonsection">
+          <button id="subnbtn" class="button" type="submit">Next</button>
+          <button id="sembtn" class="button" type="submit">Semester</button>
         </div>
       </div>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+      <h2 class="footerelements">Designed and Developed by</h2>
+      <!-- Names -->
+      <div class="footerelements">
+        <h3 class="namesandsocials">Deon Levon Dmello C&IT</h3>
+        <h3 class="namesandsocials">B Jamin Enock C&IT</h3>
+      </div>
+      <!-- Socials -->
+      <div class="footerelements">
+        <a
+          class="socialsour"
+          href="https://linktr.ee/deondmello16"
+          target="_blank"
+          ><h5 class="namesandsocials">@deonlevondmello socials</h5></a
+        >
+        <a
+          class="socialsour"
+          href="https://linktr.ee/jaminenock"
+          target="_blank"
+          ><h5 class="namesandsocials">@jaminenock socials</h5></a
+        >
+      </div>
+      <!-- Comminity -->
+      <div class=".communityelement">
+        <a target="_blank" href="https://github.com/citrevagithub"
+          ><img class="communityimg" src="images/Github.svg" alt="Github"
+        /></a>
+        <a target="_blank" href="managment.html"
+          ><img class="communityimg" src="images/Reddit.svg" alt="Reddit"
+        /></a>
+        <a target="_blank" href="managment.html"
+          ><img class="communityimg" src="images/Discord.svg" alt="Discord"
+        /></a>
+      </div>
     </footer>
+    <!-- Scripts -->
+    <script src="app.js"></script>
+    <!-- BootStrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
