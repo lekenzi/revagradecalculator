@@ -29,35 +29,20 @@
     </div>
     <!--Input-->
 
-
-
-    
-    <div class="maininput">
-      <h3 class="calfont" id="mainlabel">Select Your Batch</h3>
+    <div id="maininput">
       <!-- Drop Box -->
 
-
-
-
-      <select id="batchselect" class="calfont">
-        <option>Please Select Your Batch</option>
-        <option>Batch 1</option>
-        <option>Batch 2</option>
-        <option>Batch 3</option>
-        <option>Batch 4</option>
-      </select>
+      <form id="batchform" action="" method="get">
+        <select id="batchselect" class="calfont">
+          <option value="0">Please Select Your Batch</option>
+          <option value="1">Batch 1 (2019-20)</option>
+          <option value="2">Batch 2 (2020-21)</option>
+          <option value="3">Batch 3 (2021-22)</option>
+          <option value="4">Batch 4 (2022-23)</option>
+        </select>
+        <button id="batchsubmit" type="submit" class="btn calfont">Next</button>
+      </form>
     </div>
-    <div class="buttonsection"><button class="btn calfont">Next</button></div>
-
-
-
-
-
-
-
-
-
-
 
     <!-- Footer -->
     <footer class="calfont">
@@ -86,5 +71,8 @@
         </div>
       </div>
     </footer>
+
+    <script src="app.js"></script>
+
   </body>
 </html>

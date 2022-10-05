@@ -111,13 +111,15 @@ h6 {
   font-weight: bold;
 }
 
+
 #batchselect {
+  text-align: center;
   margin-top: 0.5em;
   width: 100%;
   font-weight: bold;
   font-size: 1.5rem;
   border-radius: 0.5em;
-  padding: 1em;
+  padding: 0em;
   border-style: solid;
   border-width: 0.1em;
   border-color: #023047;
@@ -127,3 +129,16 @@ h6 {
   margin-top: 2em;
   margin-bottom: 2em;
 }
+
+
+#maininput{
+  text-align: center;
+}
+
+/* /////////////////////////////////////////// this is the warnig class dont use the ids /////////////////////////////////// */
+.warning{  
+  font-size: small;
+  color: red;
+
+}
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
