@@ -41,13 +41,11 @@ batchsubmit.addEventListener("submit",(e)=>{
 });
 
 function numberOfSubject(value){
-    console.log("next");
-    console.log(value)
+
     maininput.remove();
-    console.log("remove success");
 
     const div = document.createElement("div");
-    div.id="numberofsubjects";
+    div.id="container";
 
     mainheader.insertAdjacentElement("afterend",div);
 
@@ -55,6 +53,12 @@ function numberOfSubject(value){
     numberofsubjectsform.id = "numberofsubjectsform";
     div.appendChild(numberofsubjectsform);
 
+
+    const numberOfSubjectsheading = document.createElement('h1');
+
+    numberOfSubjectsheading.classList.add("inputheadings");
+
+    numberOfSubjectsheading.innerText = 'Number of Subjects'
     const inputsubjects = document.createElement("input");
     numberofsubjectsform.method = "get";
     numberofsubjectsform.action ="";
@@ -67,23 +71,68 @@ function numberOfSubject(value){
     inputsubjectssubbtn.classList.add("btn");
     inputsubjectssubbtn.innerText="Proceed";
 
+    numberofsubjectsform.append(numberOfSubjectsheading)
     numberofsubjectsform.appendChild(inputsubjects);
     numberofsubjectsform.appendChild(brgen());
     numberofsubjectsform.appendChild(inputsubjectssubbtn);
+    
+    const h3 = document.createElement("h3");
+    h3.innerText ="Enter the number of subjects greater than 1"
+    h3.style.display = 'none'
+    inputsubjects.insertAdjacentElement('afterend',h3)
+
+    document.getElementById("inputsubjects").addEventListener("input",(e)=>{
+        e.preventDefault();
+        console.log("change")
+        if(inputsubjects.value<2 || inputsubjects.value>15){
+            if(h3.classList.contains("warning")){
+                // console.log(h3.classList.contains("warning"))
+            }else{
+                h3.classList.add("warning")
+            }
+        }else{
+            if(h3.classList.contains("warning"))
+            h3.classList.remove('warning')
+        }
+        
+    })
 
     document.getElementById("inputsubjectssubbtn").addEventListener("click",(e)=>{
         e.preventDefault();
-        numberofinternals();
-    })
-
-    
+        numberOfSubjectval = inputsubjects.value;
+        console.log(numberOfSubjectval)
+        if(numberOfSubjectval <2 || numberOfSubjectval >15){
+            alert("WARNING !!! \n Enter the number of subjects greater than 1")
+        }else{
+            numberofinternals()
+        }    
+    })    
 }
-
-
 
 function numberofinternals(){
     numberofsubjectsform.remove();
     console.log("reached here ")
+    console.log(numberOfSubjectval)
+
+    const numberofinternalsdiv = document.createElement("div");
+    document.getElementById("container").appendChild(numberofinternalsdiv)
+
+
+    const numberofinternalsinput = document.createElement("input");
+    numberofinternalsinput.type = "number";
+    numberofinternalsinput.placeholder = "Number of Internals "
+
+
+    const numberofinternalsbtn = document.createElement("button")
+    numberofinternalsbtn.type = "submit";
+    numberofinternalsbtn.innerText = "Proceed"
+    numberofinternalsbtn.classList.add("calfont");
+
+    numberofinternalsdiv.appendChild(numberofinternalsinput)
+    numberofinternalsdiv.appendChild(brgen());
+    numberofinternalsdiv.appendChild(numberofinternalsbtn)
+
+
 }
 
 

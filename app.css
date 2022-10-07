@@ -136,10 +136,35 @@ h6 {
 }
 
 
-/* /////////////////////////////////////////// this is the warnig class dont use the ids /////////////////////////////////// */
+/* /////////////////////////////////////////// this is the warning class dont use the ids /////////////////////////////////// */
 .warning{  
+  display: block !important;
   font-size: small;
+  padding: 10px;
   color: red;
-
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
 }
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* input headings edit  here if necessary  */
+
+.inputheadings{
+  margin: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #023047;
+  font-size: xx-large;
+  text-align: center;
+  font-weight: 600;
+}
+
+
+#inputsubjects{
+  text-align: center;
+  width: 98%;
+  height: 25px;
+  border-radius: 1em;
+  text-align: center;
+}
