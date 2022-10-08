@@ -4,9 +4,14 @@ var batchnumber =0;
 var creditsArr=[];
 var numberOfSubjectval = 0;
 var numberofinternalsval = 0;
+var Internalmarks =[];
+var assignmentmarks = [];
 
+var totalInternalMarks =  0;
 
+var semestermarks = [];
 
+var totslsemestermarks = 0;
 
 const batchsubmit = document.getElementById("batchform");
 const batchselect = document.getElementById("batchselect");
@@ -155,10 +160,13 @@ function numberofinternals(){
                 // console.log(h3.classList.contains("warning"))
             }else{
                 h3.classList.add("warning")
+                numberofinternalsinput.classList.add("inputwarning")
             }
         }else{
-            if(h3.classList.contains("warning"))
+            if(h3.classList.contains("warning")){
             h3.classList.remove('warning')
+            numberofinternalsinput.classList.remove("inputwarning")
+            }
         }
         
     })
@@ -177,21 +185,55 @@ function numberofinternals(){
 }
 
 
-function markscollector(value,div){
-
-}
-
 
 function collectMarks(){
 
     const getmarksdiv = document.createElement("div");
     document.getElementById("container").appendChild(getmarksdiv);
 
+    document.getElementById('mainheader').remove();
     numberofinternalsdivid.remove();
 
-    const getmarksheading = document.createElement("h1");
-    getmarksheading.classList.add("inputheadings");
+    markscollector(2,1,getmarksdiv);
+
 
 }
 
 
+function markscollector(internum,submun,div){
+    const h1 = document.createElement("h1");
+    h1.classList.add("inputheadings")
+
+    h1.innerText = `Subject - ${submun}`;
+
+    div.append(h1);
+
+    const limith2 = document.createElement("h2");
+    limith2.innerText = "MAX IA Marks - 30 \n MAX Assignment marks - 10"
+    div.appendChild(limith2);
+
+    div.append(brgen());
+
+    const internalsmarksform = document.createElement("form");
+
+    internalsmarksform.id = "internalsmarksformid";
+
+    for(let i = 0;i<internum;i++){
+        const iamarksinput = document.createElement("input");
+        const assignmarksinput = document.createElement("input");
+
+        iamarksinput.id = `iamarks${i}`;
+        assignmarksinput.id = `assignmarks${i}`
+
+        iamarksinput.classList.add("input")
+        assignmarksinput.classList.add("input")
+
+        iamarksinput.placeholder = `IA - ${i+1} Marks [MAX - 30]`;
+        assignmarksinput.placeholder = `Assignment - ${i+1} Marks [MAX - 30]`;
+
+        div.append(iamarksinput);
+        div.append(brgen());
+        div.append(assignmarksinput);
+        div.append(brgen());
+    }
+}

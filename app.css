@@ -170,9 +170,24 @@ h6 {
 }
 
 .input{
+  margin: 10px;
+  border: solid black 3px;
   text-align: center;
   width: 98%;
   height: 25px;
   border-radius: 1em;
   text-align: center;
+  border: none;
+  font-size: medium;
+}
+
+.inputwarning{
+  text-align: center;
+  color: red;
+  font-size: medium;
+  width: 98%;
+  height: 25px;
+  border-radius: 1em;
+  text-align: center;
+  border: solid red 4px !important;
 }
