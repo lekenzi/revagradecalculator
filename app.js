@@ -3,6 +3,7 @@ var numberOfSubjectsArr=[];
 var batchnumber =0;
 var creditsArr=[];
 var numberOfSubjectval = 0;
+var numberofinternalsval = 0;
 
 
 
@@ -55,10 +56,9 @@ function numberOfSubject(value){
 
 
     const numberOfSubjectsheading = document.createElement('h1');
-
     numberOfSubjectsheading.classList.add("inputheadings");
-
     numberOfSubjectsheading.innerText = 'Number of Subjects'
+
     const inputsubjects = document.createElement("input");
     numberofsubjectsform.method = "get";
     numberofsubjectsform.action ="";
@@ -115,23 +115,82 @@ function numberofinternals(){
     console.log(numberOfSubjectval)
 
     const numberofinternalsdiv = document.createElement("div");
-    document.getElementById("container").appendChild(numberofinternalsdiv)
+    document.getElementById("container").appendChild(numberofinternalsdiv);
+    numberofinternalsdiv.id = "numberofinternalsdivid"
+
+    const numberOfinternalsheading = document.createElement('h1');
+    numberOfinternalsheading.classList.add("inputheadings");
+    numberOfinternalsheading.innerText = 'Number of Internals'
 
 
     const numberofinternalsinput = document.createElement("input");
     numberofinternalsinput.type = "number";
+    numberofinternalsinput.id = "numberofinternalsinputid"
+    numberofinternalsinput.classList.add("input")
     numberofinternalsinput.placeholder = "Number of Internals "
 
+    const h3 = document.createElement("h3");
+    h3.innerText ="Invalid Input"
+    h3.style.display = 'none'
 
     const numberofinternalsbtn = document.createElement("button")
     numberofinternalsbtn.type = "submit";
+    numberofinternalsbtn.id = "numberofinternalsbtnid"
     numberofinternalsbtn.innerText = "Proceed"
     numberofinternalsbtn.classList.add("calfont");
+    numberofinternalsbtn.classList.add("btn")
 
+    numberofinternalsdiv.append(numberOfinternalsheading)
     numberofinternalsdiv.appendChild(numberofinternalsinput)
     numberofinternalsdiv.appendChild(brgen());
     numberofinternalsdiv.appendChild(numberofinternalsbtn)
 
+    numberofinternalsinput.insertAdjacentElement('afterend',h3)
+
+    document.getElementById("numberofinternalsinputid").addEventListener("input",(e)=>{
+        e.preventDefault();
+        console.log("change")
+        if(numberofinternalsinput.value<2 || numberofinternalsinput.value>3){
+            if(h3.classList.contains("warning")){
+                // console.log(h3.classList.contains("warning"))
+            }else{
+                h3.classList.add("warning")
+            }
+        }else{
+            if(h3.classList.contains("warning"))
+            h3.classList.remove('warning')
+        }
+        
+    })
+
+    document.getElementById("numberofinternalsbtnid").addEventListener("click",(e)=>{
+        e.preventDefault();
+        numberofinternalsval = numberofinternalsinput.value;
+        console.log(numberofinternalsval)
+        if(numberofinternalsval <2 || numberofinternalsval >3){
+            alert("WARNING !!! \n Invalid Input")
+        }else{
+            collectMarks();
+        }    
+    })  
+
+}
+
+
+function markscollector(value,div){
+
+}
+
+
+function collectMarks(){
+
+    const getmarksdiv = document.createElement("div");
+    document.getElementById("container").appendChild(getmarksdiv);
+
+    numberofinternalsdivid.remove();
+
+    const getmarksheading = document.createElement("h1");
+    getmarksheading.classList.add("inputheadings");
 
 }
 
