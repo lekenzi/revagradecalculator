@@ -228,7 +228,7 @@ h6 {
 
 /* tables class edit it here as you please  */
 
-#internalstabledivid {
+#internalstabledivid ,#semendstabledivid {
   text-align: center;
   display: flex;
   flex-direction: column;

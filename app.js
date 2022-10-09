@@ -8,6 +8,7 @@ var Internalmarks =[];
 var Assignmentmarks = [];
 var Semendmarks = [];
 var Credits = [];
+var finaltotal = [];
 
 var totalInternalMarks =  0;
 
@@ -431,13 +432,13 @@ function internalstablefun(){
         const row = document.createElement("tr");
         internalstable.append(row);
         row.append(tdgen(`${i+1}`));
-        row.append(tdgen(Internalmarks[i],30));
+        row.append(tdgen(Internalmarks[i]/2,30));
         if(batchnumber == 1){
-            row.append(tdgen(Assignmentmarks[i],20));
-            row.append(tdgen(Math.floor(Internalmarks[0]/2)+Assignmentmarks[0]/2,40))    
+            row.append(tdgen(Assignmentmarks[i]/2,10));
+            row.append(tdgen(Math.floor(Internalmarks[i]/2)+Assignmentmarks[i]/2,40))    
         }else{
-            row.append(tdgen(Assignmentmarks[i],10));
-            row.append(tdgen(Math.floor(Internalmarks[0]/2)+Assignmentmarks[0],50))
+            row.append(tdgen(Assignmentmarks[i]/2,20));
+            row.append(tdgen(Math.floor(Internalmarks[i]/2)+Assignmentmarks[i],50))
         }
     }
 
@@ -649,30 +650,69 @@ function semendtable(){
     tableheadingrow.append(cpth);
     tableheadingrow.append(Grade);
 
+    function gpcal(i){
+        let temp = Number(finaltotal[i]);
+        if(temp>=90 && temp<=100){
+            return 10;
+        }
+        else if(temp>=80 && temp<90){
+            return 9;
+        }else if(temp>=70 && temp<80){
+            return 8;
+        }else if(temp>=60 && temp<70){
+            return 7;
+        }else if (temp>=55 && temp<60){
+            return 6;
+        }else if (temp>=50 && temp<55){
+            return 5.5;
+        }else if (temp>=40 && temp<50){
+            return 5;
+        }else{
+            return 0;
+        }
+    }
+
+    function gradecal(i){
+        let temp = Number(finaltotal[i]);
+        if(temp>=90 && temp<=100){
+            return 'O';
+        }
+        else if(temp>=80 && temp<90){
+            return 'A+';
+        }else if(temp>=70 && temp<80){
+            return 'A';
+        }else if(temp>=60 && temp<70){
+            return 'B+';
+        }else if (temp>=55 && temp<60){
+            return 'B';
+        }else if (temp>=50 && temp<55){
+            return 'C+';
+        }else if (temp>=40 && temp<50){
+            return 'C';
+        }else{
+            return 'F';
+        }
+    }
     
+    for(let i = 0;i<numberOfSubjectval;i++){
+        if(batchnumber == 1){
+            finaltotal.push((Internalmarks[i]/2)+Assignmentmarks[i]/2+(0.6*Number(Semendmarks[i])));
+        }
+        else{
+            finaltotal.push((Internalmarks[i]/2)+Assignmentmarks[i]/2+(0.5*Number(Semendmarks[i])));
+        }
+    }
 
     for(let i = 0;i<numberOfSubjectval;i++){
         const row = document.createElement("tr");
         semendtable.append(row);
         row.append(tdgen(`${i+1}`));
-        row.append(tdgen(Internalmarks[i],30));
-        if(batchnumber == 1){
-            row.append(tdgen(Assignmentmarks[i],20));
-            row.append(tdgen(Math.floor(Internalmarks[0]/2)+Assignmentmarks[0]/2,40))    
-        }else{
-            row.append(tdgen(Assignmentmarks[i],10));
-            row.append(tdgen(Math.floor(Internalmarks[0]/2)+Assignmentmarks[0],50))
-        }
+        row.append(tdgen(finaltotal[i]));
+        row.append(tdgen(gradecal(i)));
+        row.append(tdgen(Credits[i]*gpcal(i)));
+        row.append(tdgen(gradecal(i)));
     }
 
-    semendstablediv.append(brgen());
-
-    const buttonnext = document.createElement("button");
-    buttonnext.type = "submit";
-    buttonnext.id = "buttonnextid";
-    buttonnext.innerText = "+Semester and CGPA";
-    buttonnext.classList.add("btn","calfont");
-    semendstablediv.append(buttonnext);
 
 
 
