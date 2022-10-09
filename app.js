@@ -6,8 +6,12 @@ var numberOfSubjectval = 0;
 var numberofinternalsval = 0;
 var Internalmarks =[];
 var Assignmentmarks = [];
+var Semendmarks = [];
+var Credits = [];
 
 var totalInternalMarks =  0;
+
+var demmi = 1;
 
 var semestermarks = [];
 
@@ -89,7 +93,7 @@ function numberOfSubject(value){
 
     document.getElementById("inputsubjects").addEventListener("input",(e)=>{
         e.preventDefault();
-        console.log("change")
+    
         if(inputsubjects.value<2 || inputsubjects.value>15){
             if(h3.classList.contains("warning")){
                 // console.log(h3.classList.contains("warning"))
@@ -106,7 +110,7 @@ function numberOfSubject(value){
     document.getElementById("inputsubjectssubbtn").addEventListener("click",(e)=>{
         e.preventDefault();
         numberOfSubjectval = inputsubjects.value;
-        console.log(numberOfSubjectval)
+        
         if(numberOfSubjectval <2 || numberOfSubjectval >15){
             alert("WARNING !!! \n Enter the number of subjects greater than 1")
         }else{
@@ -117,9 +121,7 @@ function numberOfSubject(value){
 
 function numberofinternals(){
     numberofsubjectsform.remove();
-    console.log("reached here ")
-    console.log(numberOfSubjectval)
-
+    
     const numberofinternalsdiv = document.createElement("div");
     document.getElementById("container").appendChild(numberofinternalsdiv);
     numberofinternalsdiv.id = "numberofinternalsdivid"
@@ -155,7 +157,7 @@ function numberofinternals(){
 
     document.getElementById("numberofinternalsinputid").addEventListener("input",(e)=>{
         e.preventDefault();
-        console.log("change")
+        
         if(numberofinternalsinput.value<2 || numberofinternalsinput.value>3){
             if(h3.classList.contains("warning")){
                 // console.log(h3.classList.contains("warning"))
@@ -175,7 +177,7 @@ function numberofinternals(){
     document.getElementById("numberofinternalsbtnid").addEventListener("click",(e)=>{
         e.preventDefault();
         numberofinternalsval = numberofinternalsinput.value;
-        console.log(numberofinternalsval)
+        
         if(numberofinternalsval <2 || numberofinternalsval >3){
             alert("WARNING !!! \n Invalid Input")
         }else{
@@ -194,21 +196,18 @@ function collectMarks(){
 
     const getmarksdiv = document.createElement("div");
     document.getElementById("container").appendChild(getmarksdiv);
-    getmarksdiv.id = "getmarksdivid"
+    getmarksdiv.id = "getmarksdivid";
 
     document.getElementById('mainheader').remove();
     numberofinternalsdivid.remove();
 
-    markscollector(2,1,getmarksdiv);
 
-    
-    
-
+    markscollector(numberofinternalsval,demmi,getmarksdiv);
 
 }
 
 
-function markscollector(internum,submun,div){
+function markscollector(internum,subnum,div){
     
 
     const form = document.createElement("div");
@@ -219,7 +218,7 @@ function markscollector(internum,submun,div){
     const h1 = document.createElement("h1");
     h1.classList.add("inputheadings")
 
-    h1.innerText = `Subject - ${submun}`;
+    h1.innerText = `Subject - ${subnum}`;
 
     form.append(h1);
 
@@ -264,7 +263,7 @@ function markscollector(internum,submun,div){
 
         document.getElementById(`iamarks${i}`).addEventListener("input",(e)=>{
             e.preventDefault();
-            console.log("detected change")
+           
             
             // warning event 
 
@@ -287,7 +286,7 @@ function markscollector(internum,submun,div){
 
         document.getElementById(`assignmarks${i}`).addEventListener("input",(e)=>{
             e.preventDefault();
-            console.log("detected change")
+            
             
             // warning event 
 
@@ -324,9 +323,13 @@ function markscollector(internum,submun,div){
                     if(document.getElementById(`iamarks${i}`).value<0 || document.getElementById(`iamarks${i}`).value>30){
                         alert(`Warning\n IA-${i+1} Invalid Input`)
                     }else{
-                        sum += Number(document.getElementById(`iamarks${i}`).value);
+                        for (let i = 0; i < internum; i++){
+                            sum += Number(document.getElementById(`iamarks${i}`).value);
+                            
+                            
+                        }
                         Internalmarks.push(sum);
-                        console.log(sum);
+                        break;
                     }
                 }
                 sum = 0;
@@ -334,10 +337,15 @@ function markscollector(internum,submun,div){
                     if(document.getElementById(`assignmarks${i}`).value<0 || document.getElementById(`assignmarks${i}`).value>10){
                         alert(`Warning\n Assignment-${i+1} Invalid Input`)
                     }else{
-                        sum += Number(document.getElementById(`assignmarks${i}`).value);
+                        for (let i = 0; i < internum; i++){
+                            sum += Number(document.getElementById(`assignmarks${i}`).value);
+                            
+
+                        }
                         Assignmentmarks.push(sum);
-                        console.log(sum);
+                        break;
                     }
+
                 }
                 
                 flagflag = true;
@@ -350,13 +358,320 @@ function markscollector(internum,submun,div){
                 }
 
                 if(flagflag){
-                    alert("done with no errors");
 
                     form.remove();
+                    demmi++;
+                    // dont touch this code 
 
-                    markscollector(2, 2, div);
+                    if(demmi<=numberOfSubjectval){
+                        markscollector(internum, demmi, div);
+                    }else{
+                        internalstablefun();
+                    }
+                        
                 }
         })
 
             
+}
+
+function tdgen(text,limit){
+    const td= document.createElement("td");
+    if(limit==null){
+        td.innerText=text.toString();
+        return td;
+    }else{
+        let texti=`${text}/${limit}`;
+        
+        td.innerText = texti;
+        return td;
+    }
+}
+
+function internalstablefun(){
+    const internalstablediv = document.createElement("div");
+    internalstablediv.id = "internalstabledivid";
+
+    document.getElementById("container").append(internalstablediv);
+
+    document.getElementById("getmarksdivid").remove();
+
+    const internalstable = document.createElement("table");
+    internalstable.id = "internalstableid";
+
+    internalstable.classList.add("table");
+
+    internalstablediv.append(internalstable);
+
+    const tableheadingrow = document.createElement("tr");
+    tableheadingrow.id = "tableheadingrowid";
+    internalstable.append(tableheadingrow);
+
+    const subjectth = document.createElement("th");
+    const internalsth = document.createElement("th");
+    const assignmentth = document.createElement("th");
+    const totalth = document.createElement("th");
+
+    subjectth.innerText="Subject";
+    internalsth.innerText="Internals";
+    assignmentth.innerText="Assignment";
+    totalth.innerText="Total";
+
+    tableheadingrow.append(subjectth);
+    tableheadingrow.append(internalsth);
+    tableheadingrow.append(assignmentth);
+    tableheadingrow.append(totalth);
+    
+
+    for(let i = 0;i<numberOfSubjectval;i++){
+        const row = document.createElement("tr");
+        internalstable.append(row);
+        row.append(tdgen(`${i+1}`));
+        row.append(tdgen(Internalmarks[i],30));
+        if(batchnumber == 1){
+            row.append(tdgen(Assignmentmarks[i],20));
+            row.append(tdgen(Math.floor(Internalmarks[0]/2)+Assignmentmarks[0]/2,40))    
+        }else{
+            row.append(tdgen(Assignmentmarks[i],10));
+            row.append(tdgen(Math.floor(Internalmarks[0]/2)+Assignmentmarks[0],50))
+        }
+    }
+
+    internalstablediv.append(brgen());
+
+    const buttonnext = document.createElement("button");
+    buttonnext.type = "submit";
+    buttonnext.id = "buttonnextid";
+    buttonnext.innerText = "+Semester and CGPA";
+    buttonnext.classList.add("btn","calfont");
+    internalstablediv.append(buttonnext);
+
+    buttonnext.addEventListener("click",()=>{
+        getsemendmarks();
+    })
+
+}
+
+function getsemendmarks(){
+    const div = document.getElementById("container");
+
+    document.getElementById("internalstabledivid").remove();
+
+    const form = document.createElement("div");
+
+    form.id = "semendmarksform";
+    div.append(form);
+
+    const h1 = document.createElement("h1");
+    h1.classList.add("inputheadings")
+
+    h1.innerText = "Semester End";
+
+    form.append(h1);
+
+    const limith2 = document.createElement("h2");
+    limith2.innerText = "MAX Semester Exam Marks - 100 \n MAX Course Credits - 6"
+    form.appendChild(limith2);
+
+    form.append(brgen());
+
+    for(let i = 0;i<numberOfSubjectval;i++){
+        const semendmarks = document.createElement("input");
+        const credits = document.createElement("input");
+
+        semendmarks.id = `semmarks${i}`;
+        credits.id = `s${i}credits${i}`;
+
+        semendmarks.type ="number";
+        credits.type ="number";
+
+        semendmarks.classList.add("input")
+        credits.classList.add("input")
+
+        semendmarks.placeholder = `Subject-${i+1} Marks`;
+        credits.placeholder = `Subject-${i+1} Credits`;
+
+        // warning
+        const h3i = document.createElement("h3");
+        h3i.innerText ="Max Marks 100";
+        h3i.style.display = 'none';
+
+        // warning
+        const h3a = document.createElement("h3");
+        h3a.innerText ="Max Credits 6 ";
+        h3a.style.display = 'none';
+        
+        form.append(semendmarks);
+        form.append(h3i);
+        form.append(brgen());
+        form.append(credits);
+        form.append(h3a);
+        form.append(brgen());
+
+        document.getElementById(`semmarks${i}`).addEventListener("input",(e)=>{
+            e.preventDefault();
+           
+            
+            // warning event 
+
+            if(document.getElementById(`semmarks${i}`).value<0 || document.getElementById(`semmarks${i}`).value>100){
+                if(h3i.classList.contains("warning")){
+                    // console.log(h3.classList.contains("warning"))
+                }else{
+                    h3i.classList.add("warning")
+                    semendmarks.classList.add("inputwarning")
+                }
+            }else{
+                if(h3i.classList.contains("warning")){
+                h3i.classList.remove('warning')
+                semendmarks.classList.remove("inputwarning")
+                }
+            }
+            
+            // warning event 
+        })
+
+        document.getElementById(`s${i}credits${i}`).addEventListener("input",(e)=>{
+            e.preventDefault();
+            
+            
+            // warning event 
+
+            if(document.getElementById(`s${i}credits${i}`).value<0 || document.getElementById(`s${i}credits${i}`).value>6){
+                if(h3a.classList.contains("warning")){
+                    // console.log(h3.classList.contains("warning"))
+                }else{
+                    h3a.classList.add("warning")
+                    credits.classList.add("inputwarning")
+                }
+            }else{
+                if(h3a.classList.contains("warning")){
+                    h3a.classList.remove('warning')
+                    credits.classList.remove("inputwarning")
+                }
+            }
+
+            // warning event 
+        })
+
+    }
+
+        const submitbutton = document.createElement("button");
+        submitbutton.classList.add("btn","calfont")
+        submitbutton.id = "nextbuttonid"
+        submitbutton.type= "Submit";
+        submitbutton.innerText = 'Calculate';
+
+        form.append(submitbutton);
+
+        let internum = numberOfSubjectval;
+
+        // correction from here 
+
+        document.getElementById("nextbuttonid").addEventListener("click",function () {
+                let sum = 0;
+                for (let i = 0; i < internum; i++) {
+                    if(document.getElementById(`semmarks${i}`).value<0 || document.getElementById(`semmarks${i}`).value>100){
+                        alert(`Warning\n Subject-${i+1} Invalid Input`)
+                    }else{
+                        Semendmarks.push(document.getElementById(`semmarks${i}`).value);
+                    }
+                }
+                sum = 0;
+                for (let i = 0; i < internum; i++) {
+                    if(document.getElementById(`s${i}credits${i}`).value<0 || document.getElementById(`s${i}credits${i}`).value>10){
+                        alert(`Warning\n Subject-${i+1} Credits Invalid Input`)
+                    }else{
+                        Credits.push(document.getElementById(`s${i}credits${i}`).value);
+                    }
+
+                }
+                
+                flagflag = true;
+                for (let i = 0; i < internum; i++){
+                    if((document.getElementById(`semmarks${i}`).value<0 || document.getElementById(`semmarks${i}`).value>100)
+                    &&
+                    (document.getElementById(`s${i}credits${i}`).value<0 || document.getElementById(`s${i}credits${i}`).value>6)){
+                        flagflag = false;        
+                    }
+                }
+
+                if(flagflag){
+                    form.remove();
+                    
+                    semendtable();
+                        
+                }
+        })
+
+}
+
+function semendtable(){
+
+    console.log("Homies over here");
+    const semendstablediv = document.createElement("div");
+    semendstablediv.id = "semendstabledivid";
+
+    document.getElementById("container").append(semendstablediv);
+
+    document.getElementById("semendmarksform").remove();
+
+    const internalstable = document.createElement("table");
+    internalstable.id = "internalstableid";
+
+    internalstable.classList.add("table");
+
+    semendstablediv.append(internalstable);
+
+    const tableheadingrow = document.createElement("tr");
+    tableheadingrow.id = "tableheadingrowid";
+    internalstable.append(tableheadingrow);
+
+    const subjectth = document.createElement("th");
+    const marks = document.createElement("th");
+    const assignmentth = document.createElement("th");
+    const totalth = document.createElement("th");
+    const Grade = document.createElement("th");
+    
+    subjectth.innerText="Subject";
+    marks.innerText="Marks";
+    assignmentth.innerText="G.P";
+    totalth.innerText="C.P";
+    Grade.innerText="Grade";
+
+    tableheadingrow.append(subjectth);
+    tableheadingrow.append(marks);
+    tableheadingrow.append(assignmentth);
+    tableheadingrow.append(totalth);
+    tableheadingrow.append(Grade);
+
+    
+
+    for(let i = 0;i<numberOfSubjectval;i++){
+        const row = document.createElement("tr");
+        internalstable.append(row);
+        row.append(tdgen(`${i+1}`));
+        row.append(tdgen(Internalmarks[i],30));
+        if(batchnumber == 1){
+            row.append(tdgen(Assignmentmarks[i],20));
+            row.append(tdgen(Math.floor(Internalmarks[0]/2)+Assignmentmarks[0]/2,40))    
+        }else{
+            row.append(tdgen(Assignmentmarks[i],10));
+            row.append(tdgen(Math.floor(Internalmarks[0]/2)+Assignmentmarks[0],50))
+        }
+    }
+
+    semendstablediv.append(brgen());
+
+    const buttonnext = document.createElement("button");
+    buttonnext.type = "submit";
+    buttonnext.id = "buttonnextid";
+    buttonnext.innerText = "+Semester and CGPA";
+    buttonnext.classList.add("btn","calfont");
+    semendstablediv.append(buttonnext);
+
+
+
+
+
 }
