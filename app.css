@@ -195,7 +195,9 @@ h6 {
 
 /* tables class edit it here as you please  */
 
-#internalstabledivid{
+
+
+#internalstabledivid , #semendtableid {
   text-align: center;
   display: flex;
   flex-direction: column;

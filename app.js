@@ -575,7 +575,7 @@ function getsemendmarks(){
         document.getElementById("nextbuttonid").addEventListener("click",function () {
                 let sum = 0;
                 for (let i = 0; i < internum; i++) {
-                    if(document.getElementById(`semmarks${i}`).value<0 || document.getElementById(`semmarks${i}`).value>100){
+                    if(document.getElementById(`semmarks${i}`).value<0 || document.getElementById(`semmarks${i}`).value>100 || document.getElementById(`semmarks${i}`).value ==''){
                         alert(`Warning\n Subject-${i+1} Invalid Input`)
                     }else{
                         Semendmarks.push(document.getElementById(`semmarks${i}`).value);
@@ -583,7 +583,7 @@ function getsemendmarks(){
                 }
                 sum = 0;
                 for (let i = 0; i < internum; i++) {
-                    if(document.getElementById(`s${i}credits${i}`).value<0 || document.getElementById(`s${i}credits${i}`).value>4){
+                    if(document.getElementById(`s${i}credits${i}`).value<0 || document.getElementById(`s${i}credits${i}`).value>4 || document.getElementById(`s${i}credits${i}`).value == ''){
                         alert(`Warning\n Subject-${i+1} Credits Invalid Input`)
                     }else{
                         Credits.push(document.getElementById(`s${i}credits${i}`).value);
@@ -593,15 +593,15 @@ function getsemendmarks(){
                 
                 flagflag = true;
                 for (let i = 0; i < internum; i++){
-                    if((document.getElementById(`semmarks${i}`).value<0 || document.getElementById(`semmarks${i}`).value>100)
+                    if((document.getElementById(`semmarks${i}`).value<0 || document.getElementById(`semmarks${i}`).value>100 || document.getElementById(`semmarks${i}`).value=='')
                     &&
-                    (document.getElementById(`s${i}credits${i}`).value<0 || document.getElementById(`s${i}credits${i}`).value>4)){
+                    (document.getElementById(`s${i}credits${i}`).value<0 || document.getElementById(`s${i}credits${i}`).value>4 || document.getElementById(`s${i}credits${i}`).value == '')){
                         flagflag = false;        
                     }
                 }
 
                 if(flagflag){
-                    form.remove();
+                    
                     
                     semendtable();
                         
@@ -620,16 +620,16 @@ function semendtable(){
 
     document.getElementById("semendmarksform").remove();
 
-    const internalstable = document.createElement("table");
-    internalstable.id = "internalstableid";
+    const semendtable = document.createElement("table");
+    semendtable.id = "semendtableid";
 
-    internalstable.classList.add("table");
+    semendtable.classList.add("table");
 
-    semendstablediv.append(internalstable);
+    semendstablediv.append(semendtable);
 
     const tableheadingrow = document.createElement("tr");
     tableheadingrow.id = "tableheadingrowid";
-    internalstable.append(tableheadingrow);
+    semendtable.append(tableheadingrow);
 
     const subjectth = document.createElement("th");
     const marksth = document.createElement("th");
@@ -653,7 +653,7 @@ function semendtable(){
 
     for(let i = 0;i<numberOfSubjectval;i++){
         const row = document.createElement("tr");
-        internalstable.append(row);
+        semendtable.append(row);
         row.append(tdgen(`${i+1}`));
         row.append(tdgen(Internalmarks[i],30));
         if(batchnumber == 1){
