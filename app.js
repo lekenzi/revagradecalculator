@@ -74,6 +74,7 @@ function numberOfSubject(value){
     numberofsubjectsform.action ="";
     inputsubjects.type ="number"
     inputsubjects.id="inputsubjects";
+    inputsubjects.placeholder ="Number Of Subjects"
     const inputsubjectssubbtn = document.createElement("button");
     inputsubjectssubbtn.classList.add("calfont");
     inputsubjectssubbtn.id = "inputsubjectssubbtn";
@@ -470,7 +471,7 @@ function getsemendmarks(){
     form.append(h1);
 
     const limith2 = document.createElement("h2");
-    limith2.innerText = "MAX Semester Exam Marks - 100 \n MAX Course Credits - 6"
+    limith2.innerText = "MAX Semester Exam Marks - 100 \n MAX Course Credits - 4"
     form.appendChild(limith2);
 
     form.append(brgen());
@@ -537,7 +538,7 @@ function getsemendmarks(){
             
             // warning event 
 
-            if(document.getElementById(`s${i}credits${i}`).value<0 || document.getElementById(`s${i}credits${i}`).value>6){
+            if(document.getElementById(`s${i}credits${i}`).value<0 || document.getElementById(`s${i}credits${i}`).value>4){
                 if(h3a.classList.contains("warning")){
                     // console.log(h3.classList.contains("warning"))
                 }else{
@@ -579,7 +580,7 @@ function getsemendmarks(){
                 }
                 sum = 0;
                 for (let i = 0; i < internum; i++) {
-                    if(document.getElementById(`s${i}credits${i}`).value<0 || document.getElementById(`s${i}credits${i}`).value>10){
+                    if(document.getElementById(`s${i}credits${i}`).value<0 || document.getElementById(`s${i}credits${i}`).value>4){
                         alert(`Warning\n Subject-${i+1} Credits Invalid Input`)
                     }else{
                         Credits.push(document.getElementById(`s${i}credits${i}`).value);
@@ -591,7 +592,7 @@ function getsemendmarks(){
                 for (let i = 0; i < internum; i++){
                     if((document.getElementById(`semmarks${i}`).value<0 || document.getElementById(`semmarks${i}`).value>100)
                     &&
-                    (document.getElementById(`s${i}credits${i}`).value<0 || document.getElementById(`s${i}credits${i}`).value>6)){
+                    (document.getElementById(`s${i}credits${i}`).value<0 || document.getElementById(`s${i}credits${i}`).value>4)){
                         flagflag = false;        
                     }
                 }
