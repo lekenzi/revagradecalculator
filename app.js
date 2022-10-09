@@ -291,7 +291,7 @@ function markscollector(internum,subnum,div){
             
             // warning event 
 
-            if(document.getElementById(`assignmarks${i}`).value<0 || document.getElementById(`assignmarks${i}`).value>10 ||document.getElementById(`assignmarks${i}`).value ==""){
+            if(document.getElementById(`assignmarks${i}`).value<0 || document.getElementById(`assignmarks${i}`).value>10 ){
                 if(h3a.classList.contains("warning")){
                     // console.log(h3.classList.contains("warning"))
                 }else{
@@ -315,13 +315,16 @@ function markscollector(internum,subnum,div){
         submitbutton.id = "nextbuttonid"
         submitbutton.type= "Submit";
         submitbutton.innerText = 'Next';
+        if(demmi == numberOfSubjectval){
+            submitbutton.innerText = 'Calculate';
+        }
 
         form.append(submitbutton);
 
         document.getElementById("nextbuttonid").addEventListener("click",function () {
                 let sum = 0;
                 for (let i = 0; i < internum; i++) {
-                    if(document.getElementById(`iamarks${i}`).value<0 || document.getElementById(`iamarks${i}`).value>30 || document.getElementById(`iamarks${i}`).value<0 == ""){
+                    if(document.getElementById(`iamarks${i}`).value<0 || document.getElementById(`iamarks${i}`).value>30 || document.getElementById(`iamarks${i}`).value == ''){
                         alert(`Warning\n IA-${i+1} Invalid Input`)
                     }else{
                         for (let i = 0; i < internum; i++){
@@ -335,7 +338,7 @@ function markscollector(internum,subnum,div){
                 }
                 sum = 0;
                 for (let i = 0; i < internum; i++) {
-                    if(document.getElementById(`assignmarks${i}`).value<0 || document.getElementById(`assignmarks${i}`).value>10 || document.getElementById(`assignmarks${i}`).value ==""){
+                    if(document.getElementById(`assignmarks${i}`).value<0 || document.getElementById(`assignmarks${i}`).value>10 || document.getElementById(`assignmarks${i}`).value ==''){
                         alert(`Warning\n Assignment-${i+1} Invalid Input`)
                     }else{
                         for (let i = 0; i < internum; i++){
@@ -351,9 +354,9 @@ function markscollector(internum,subnum,div){
                 
                 flagflag = true;
                 for (let i = 0; i < internum; i++){
-                    if((document.getElementById(`iamarks${i}`).value<0 || document.getElementById(`iamarks${i}`).value>30 || document.getElementById(`iamarks${i}`).value =="")
+                    if((document.getElementById(`iamarks${i}`).value<0 || document.getElementById(`iamarks${i}`).value>30 || document.getElementById(`iamarks${i}`).value =='')
                     &&
-                    (document.getElementById(`assignmarks${i}`).value<0 || document.getElementById(`assignmarks${i}`).value>10 || document.getElementById(`assignmarks${i}`).value=="")){
+                    (document.getElementById(`assignmarks${i}`).value<0 || document.getElementById(`assignmarks${i}`).value>10 || document.getElementById(`assignmarks${i}`).value=='')){
                         flagflag = false;        
                     }
                 }
