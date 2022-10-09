@@ -503,7 +503,7 @@ function getsemendmarks(){
 
         // warning
         const h3a = document.createElement("h3");
-        h3a.innerText ="Max Credits 6 ";
+        h3a.innerText ="Max Credits 4 ";
         h3a.style.display = 'none';
         
         form.append(semendmarks);
@@ -699,7 +699,7 @@ function semendtable(){
             finaltotal.push((Internalmarks[i]/2)+Assignmentmarks[i]/2+(0.6*Number(Semendmarks[i])));
         }
         else{
-            finaltotal.push((Internalmarks[i]/2)+Assignmentmarks[i]/2+(0.5*Number(Semendmarks[i])));
+            finaltotal.push((Internalmarks[i]/2)+Assignmentmarks[i]+(0.5*Number(Semendmarks[i])));
         }
     }
 
