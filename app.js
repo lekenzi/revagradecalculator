@@ -732,7 +732,7 @@ function semendtable(){
 
     const sgpa = document.createElement("h1");
     sgpa.id ="sgpaid";
-    sgpa.innerText = sgpacal();
+    sgpa.innerText = `SGPA:${sgpacal()}`;
 
     semendstablediv.append(sgpa);
 
