@@ -628,21 +628,21 @@ function semendtable(){
     internalstable.append(tableheadingrow);
 
     const subjectth = document.createElement("th");
-    const marks = document.createElement("th");
-    const assignmentth = document.createElement("th");
-    const totalth = document.createElement("th");
+    const marksth = document.createElement("th");
+    const gpth = document.createElement("th");
+    const cpth = document.createElement("th");
     const Grade = document.createElement("th");
     
     subjectth.innerText="Subject";
-    marks.innerText="Marks";
-    assignmentth.innerText="G.P";
-    totalth.innerText="C.P";
+    marksth.innerText="Marks";
+    gpth.innerText="G.P";
+    cpth.innerText="C.P";
     Grade.innerText="Grade";
 
     tableheadingrow.append(subjectth);
-    tableheadingrow.append(marks);
-    tableheadingrow.append(assignmentth);
-    tableheadingrow.append(totalth);
+    tableheadingrow.append(marksth);
+    tableheadingrow.append(gpth);
+    tableheadingrow.append(cpth);
     tableheadingrow.append(Grade);
 
     
