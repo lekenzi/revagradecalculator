@@ -642,7 +642,7 @@ function semendtable(){
     marksth.innerText="Marks";
     gpth.innerText="G.P";
     cpth.innerText="C.P";
-    Grade.innerText="Grade";
+    Grade.innerText="Grade Letter";
 
     tableheadingrow.append(subjectth);
     tableheadingrow.append(marksth);
@@ -709,13 +709,32 @@ function semendtable(){
         row.append(tdgen(`${i+1}`));
         row.append(tdgen(finaltotal[i]));
         row.append(tdgen(gradecal(i)));
-        row.append(tdgen(Credits[i]*gpcal(i)));
+        row.append(tdgen((Credits[i]*gpcal(i))));
         row.append(tdgen(gradecal(i)));
     }
+    function roundToTwo(num) {
+        return +(Math.round(num + "e+2")  + "e-2");
+    }
 
+    function sgpacal(){
+        let top = 0;
+        for(let i = 0;i<numberOfSubjectval;i++){
+            top+=(Credits[i]*gpcal(i));
+        }
+        let bottom = 0;
+        for(let cr of Credits){
+            bottom+=(Number(cr));
+        }
 
+        return (top/bottom)
 
+    }
 
+    const sgpa = document.createElement("h1");
+    sgpa.id ="sgpaid";
+    sgpa.innerText = sgpacal();
+
+    semendstablediv.append(sgpa);
 
 
 }
