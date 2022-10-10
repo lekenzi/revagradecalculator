@@ -708,7 +708,7 @@ function semendtable(){
         semendtable.append(row);
         row.append(tdgen(`${i+1}`));
         row.append(tdgen(finaltotal[i]));
-        row.append(tdgen(gradecal(i)));
+        row.append(tdgen(gpcal(i)));
         row.append(tdgen((Credits[i]*gpcal(i))));
         row.append(tdgen(gradecal(i)));
     }
