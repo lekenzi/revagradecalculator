@@ -228,7 +228,8 @@ h6 {
 
 /* tables class edit it here as you please  */
 
-#internalstabledivid ,#semendstabledivid {
+#internalstabledivid,
+#semendstabledivid {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -301,10 +302,10 @@ table {
   font-weight: bold;
 }
 
-
-#sgpaid{
-  padding: 20px;
-  font-size: xx-large;
+#sgpaid {
+  margin-top: 1em;
+  font-size: 2em;
   font-family: Arial, Helvetica, sans-serif;
-  color: white;
+  font-weight: bold;
+  color: #ffffff;
 }
